@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      //1.  write a class to calculate the uber price.
+        class Uber{
+            constructor(distance,waitingtime,rate,tollgatecharge){
+                this.distance=distance;
+                this.waitingtime=waitingtime;
+                this.rate=rate;
+                this.tollgatecharge=tollgatecharge;
+            }
+        
+        setDistance(dist){
+            this.distance=dist;
+        }
+        getRidedetails(){
+            return(`the distance of the ride is ${this.distance} with waiting time of ${this.waitingtime} with rate of ${this.rate} and tollgatecharge ${this.tollgatecharge}`)
+        }
+        getRate(){
+            let totalRate=(this.distance*this.rate)+(this.waitingtime*10)+(this.tollgatecharge*100)
+            return totalRate;
+        }
+    }
+    let customer1=new Uber(150,15,10,2)
+    console.log(customer1.getRate());
+    customer1.setDistance(120);
+    console.log (customer1.getRidedetails());
+    console.log (customer1.getRate());
+
+   //2. Write a “person” class to hold all the details.
+    
+    function Person(firstName,lastName,middleName){
+        this.firstName= firstName;
+        this.lastName= lastName;
+        this.middleName= middleName;
+        
+    }
+    let person1detail = new Person("Ram","BE","EEE");
+    let person2detail = new Person("Ragu", "BE","ECE"); 
+    let person3detail = new Person("Lokesh", "BE","MECH");   
+    let person4detail = new Person("Vasika", "BE","CSE");   
+    let person5detail = new Person("Taanvi", "BE","EEE");
+    let person6detail = new Person("Mani", "BE","EEE");    
+    
+    console.log(person1detail.firstName,person4detail.firstName);
+    </script>
+
+</body>
+</html>
